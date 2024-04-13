@@ -1,0 +1,132 @@
+@font-face {
+    font-family: starcraft_menu;
+    src: url(fonts/GRAMMARA.TTF);
+}
+
+@font-face {
+    font-family: starcraft_title;
+    src: url(fonts/Starcraft\ Normal.ttf);
+}
+
+* {
+    font-family: starcraft_menu;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button,
+.menu_screen,
+.dedication {
+    border: 5px solid rgb(55, 117, 190);
+    border-radius: 10px;
+    outline: 5px solid rgb(11 58 112 / 0.5);
+    box-shadow: 0 0 5px 3px rgb(11 58 112) inset;
+    background-color: rgb(1 7 19 / 0.8);
+}
+
+button {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    color: rgb(164 202 241);
+    text-shadow: 3px 3px 2px rgb(0 0 0);
+    cursor: pointer;
+    background-image: radial-gradient(ellipse at bottom, rgb(6 69 120), rgb(8 60 107), rgb(7 31 57), rgb(3 12 19), rgb(0 9 8), rgb(0 8 29));
+}
+
+.menu_screen {
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+/* .menu_screen:before {
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    top: -11px;
+    left: -11px;
+    right: -11px;
+    bottom: -11px;
+    border: 5px solid rgb(11 58 112 / 0.5);
+    border-radius: 10px;
+} */
+
+.title,
+.dedication {
+    color: rgb(321 252 255);
+    text-shadow: 0 0 8px rgb(137 187 236);
+}
+
+.title {
+    font-family: starcraft_menu;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.cards_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    justify-items: center;
+}
+
+.mutator_card {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    width: 350px;
+    height: 90px;
+    margin: 10px;
+    padding-left: 12px;
+    border: 2px solid rgb(21 29 42);
+    border-radius: 2px;
+    box-shadow: 0 0 1px 0.5px rgb(21 29 42) inset;
+    line-height: 1.5;
+    color: rgb(32 118 153);
+    background-color: rgb(4 22 44 / 0.4);
+
+    img {
+        width: 64px;
+        margin-right: 20px;
+        border: 2px solid rgb(47 84 113);
+        border-radius: 7px;
+        outline: 3px solid rgb(13 26 42 / 0.8);
+    }
+
+    .page_number {
+        width: min-content;
+        margin-left: auto;
+        margin-right: 10px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+}
+
+.mutator_card.highlighted {
+    border-color: rgb(70 103 136);
+    box-shadow: 0 0 1px 1px rgb(13 46 79) inset;
+    color: rgb(321 252 255);
+    text-shadow: 0 0 8px rgb(137 187 236);
+    background-color: rgb(4 22 44 / 0.7);
+}
+
+.dedication {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+}

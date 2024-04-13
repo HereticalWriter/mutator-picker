@@ -33,25 +33,35 @@ function getMutatorIndex() {
 }
 
 const body = document.querySelector("body");
+const cardsContainer = document.querySelector(".cards_container");
 const btn = document.querySelector("button");
 
 btn.addEventListener("click", () => {
 
     if (mutatorList.length === 0) {
-        console.log("end of list");
         return;
     }
 
-    let mutatorCard = document.createElement("p");
     let mutatorIndex = getMutatorIndex();
 
-    mutatorCard.textContent = `${mutatorList[mutatorIndex].name}, page ${mutatorList[mutatorIndex].page}`;
-    body.appendChild(mutatorCard);
+    let mutatorCard = document.createElement("div");
+    mutatorCard.classList.toggle("mutator_card");
+    mutatorCard.classList.toggle("highlighted");
+    cardsContainer.appendChild(mutatorCard);
 
     let mutatorIcon = document.createElement("img");
-    mutatorIcon.setAttribute("src", `${mutatorList[mutatorIndex].url}`);
-    mutatorIcon.setAttribute("alt", `${mutatorList[mutatorIndex].name}`);
+    mutatorIcon.setAttribute("src", mutatorList[mutatorIndex].url);
+    mutatorIcon.setAttribute("alt", mutatorList[mutatorIndex].name);
     mutatorCard.appendChild(mutatorIcon);
+
+    let mutatorName = document.createElement("p");
+    mutatorName.textContent = mutatorList[mutatorIndex].name;
+    mutatorCard.appendChild(mutatorName);
+
+    let mutatorPage = document.createElement("p");
+    mutatorPage.classList.toggle("page_number");
+    mutatorPage.textContent = `Page #${mutatorList[mutatorIndex].page}`;
+    mutatorCard.appendChild(mutatorPage);
 
     mutatorList.splice(mutatorIndex, 1);
 })
